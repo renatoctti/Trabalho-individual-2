@@ -100,3 +100,54 @@ def max_min_select(arr, left, right):
 - O menor valor global é o menor entre `min1` e `min2`.
 - O maior valor global é o maior entre `max1` e `max2`.
 
+# Análise da Complexidade Assintótica
+
+## Método de Contagem de Operações
+O algoritmo **MaxMin Select** reduz o número de comparações necessárias para encontrar o maior e o menor elemento de uma lista. Vamos analisar o número de operações realizadas em cada etapa do algoritmo.
+
+### 1. Contagem de Comparações
+
+- **Caso Base:**
+  - Quando `n = 1`, não há comparações.
+  - Quando `n = 2`, ocorre **1 comparação**.
+
+- **Divisão Recursiva:**
+  - O array é dividido em duas partes de tamanho `n/2`.
+  - O algoritmo é chamado **duas vezes**, uma para cada metade.
+
+- **Combinação dos Resultados:**
+  - Depois de obter os menores e maiores valores das duas metades, precisamos de **duas comparações** para encontrar o menor global e o maior global.
+
+Portanto, a relação de recorrência do número de comparações é:
+```
+C(n) = C(n/2) + C(n/2) + 2
+```
+O que resulta em:
+```
+C(n) = 2C(n/2) + 2
+```
+Expandindo a recorrência:
+```
+C(n) = 2[2C(n/4) + 2] + 2 = 4C(n/4) + 4 + 2
+C(n) = 8C(n/8) + 8 + 4 + 2
+...
+C(n) = 2^k C(n / 2^k) + 2^k - 2
+```
+Como `n / 2^k = 1` quando `k = log_2 n`, temos:
+```
+C(n) = 2^(log_2 n) C(1) + 2^(log_2 n) - 2
+```
+Sabendo que `2^(log_2 n) = n`, então:
+```
+C(n) = n - 1 + 2n - 2 = 3n/2 - 2
+```
+
+### 2. Complexidade Assintótica
+A complexidade assintótica do algoritmo é **O(n)**, pois o número de comparações cresce linearmente em relação ao tamanho da entrada.
+
+Essa abordagem é mais eficiente do que uma comparação ingênua, que requer **2(n - 1) ≈ O(n)** comparações, mas ainda se mantém na mesma classe de complexidade **O(n)**.
+
+
+
+
+
