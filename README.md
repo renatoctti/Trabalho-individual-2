@@ -200,5 +200,6 @@ A complexidade assintótica do **MaxMin Select** é **O(n)**, confirmando que o 
 
 
 
+![Screenshot_52](https://github.com/user-attachments/assets/2ababbf8-f989-4475-aab0-7bd8adf5fcb9)
 
 
