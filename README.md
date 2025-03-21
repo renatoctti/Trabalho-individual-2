@@ -164,9 +164,9 @@ T(n) = aT(n/b) + f(n)
 
 ### **1. Identificação dos valores de \(a\), \(b\) e \(f(n)\):**
 Comparando com a equação do Teorema Mestre:
-- **\( a = 2 \)** (o problema é dividido em duas partes)
-- **\( b = 2 \)** (cada parte tem metade do tamanho)
-- **\( f(n) = O(1) \)** (custo constante para combinar os resultados)
+- **\( a = 2 \)** (número de subproblemas)
+- **\( b = 2 \)** (fator de redução do tamanho do problema)
+- **\( f(n) = O(1) \)** (custo externo relacionado à divisão e combinação dos subproblemas)
 
 ### **2. Cálculo de \( \log_b a \) para determinar \( p \):**
 
@@ -174,22 +174,22 @@ Comparando com a equação do Teorema Mestre:
  p = \log_2 2 = 1
 \]
 
-### **3. Determinação do Caso do Teorema Mestre**
 Os três casos do Teorema Mestre são:
-1. Se \( f(n) = O(n^c) \) com \( c < p \), então \( T(n) = O(n^p) \).
-2. Se \( f(n) = O(n^p) \), então \( T(n) = O(n^p \log n) \).
-3. Se \( f(n) = O(n^c) \) com \( c > p \), então \( T(n) = O(f(n)) \).
+
+- Se ( f(n) < n log(b) a ), então ( T(n) = O(n^p) ).
+- Se ( f(n) = n log(b) a ), então ( T(n) = O(n^p \log n) ).
+- Se ( f(n) > n log(b) a ), então T(n) = O(f(n) ).
 
 Aqui:
-- \( f(n) = O(1) \), ou seja, \( c = 0 \).
-- Como \( c < p \) (0 < 1), caímos no **Caso 1**.
 
-### **4. Solução Assintótica \( T(n) \):**
+- 𝑓(𝑛) = 𝑂(𝑛1 − 𝜖) = 𝑂 (𝑛0)
+- Como \(c < \log_b a\) (0 < 1), caímos no **Caso 1**.
 
 Pelo Teorema Mestre:
-\[
+
+$$
 T(n) = O(n^1) = O(n)
-\]
+$$
 
 ### **Conclusão**
 A complexidade assintótica do **MaxMin Select** é **O(n)**, confirmando que o algoritmo processa cada elemento do array apenas uma vez durante sua execução.
