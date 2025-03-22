@@ -143,9 +143,9 @@ C(n) = n - 1 + 2n - 2 = 3n/2 - 2
 ```
 
 ### 2. Complexidade Assintótica
-A complexidade assintótica do algoritmo é **O(n)**, pois o número de comparações cresce linearmente em relação ao tamanho da entrada.
+A complexidade assintótica do algoritmo é **Θ(𝑛)**, pois o número de comparações cresce linearmente em relação ao tamanho da entrada.
 
-Essa abordagem é mais eficiente do que uma comparação ingênua, que requer **2(n - 1) ≈ O(n)** comparações, mas ainda se mantém na mesma classe de complexidade **O(n)**.
+Essa abordagem é mais eficiente do que uma comparação ingênua, que requer **2(n - 1) ≈ Θ(𝑛)** comparações, mas ainda se mantém na mesma classe de complexidade **O(n)**.
 
 ## Utilizando o Teorema Mestre
 
@@ -182,7 +182,7 @@ Os três casos do Teorema Mestre são:
 
 Aqui:
 
-- 𝑓(𝑛) = 𝑂(𝑛1 − 𝜖) com 𝜖 > 0, assim temos 𝑓(𝑛) =  Θ(𝑛0) = Θ(1)
+- 𝑓(𝑛) = Θ(𝑛1 − 𝜖) com 𝜖 > 0, assim temos 𝑓(𝑛) =  Θ(𝑛0) = Θ(1)
 - Como \(𝑛0 < \log_b a\) (0 < 1), caímos no **Caso 1**.
 
 Pelo Teorema Mestre:
