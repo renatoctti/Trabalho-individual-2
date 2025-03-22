@@ -182,8 +182,8 @@ Os três casos do Teorema Mestre são:
 
 Aqui:
 
-- 𝑓(𝑛) = 𝑂(𝑛1 − 𝜖) = 𝑂 (𝑛0)
-- Como \(c < \log_b a\) (0 < 1), caímos no **Caso 1**.
+- 𝑓(𝑛) = 𝑂(𝑛1 − 𝜖) com 𝜖 > 0, assim temos 𝑓(𝑛) =  Θ(𝑛0) = Θ(1)
+- Como \(𝑛0 < \log_b a\) (0 < 1), caímos no **Caso 1**.
 
 Pelo Teorema Mestre:
 
