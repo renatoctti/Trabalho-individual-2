@@ -107,40 +107,45 @@ O algoritmo **MaxMin Select** reduz o número de comparações necessárias para
 
 ### 1. Contagem de Comparações
 
-- **Caso Base:**
-  - Quando `n = 1`, não há comparações.
-  - Quando `n = 2`, ocorre **1 comparação**.
 
-- **Divisão Recursiva:**
-  - O array é dividido em duas partes de tamanho `n/2`.
-  - O algoritmo é chamado **duas vezes**, uma para cada metade.
+### Introdução
+O algoritmo `max_min_select` segue o paradigma **"dividir para conquistar"**, dividindo o array em duas partes recursivamente e combinando os resultados para encontrar o mínimo e o máximo de um conjunto de números.
 
-- **Combinação dos Resultados:**
-  - Depois de obter os menores e maiores valores das duas metades, precisamos de **duas comparações** para encontrar o menor global e o maior global.
+### Contagem de Operações
+- Para um único elemento (`left == right`), a complexidade é **O(1)**.
+- Para dois elementos (`right == left + 1`), é realizada uma única comparação **O(1)**.
+- Para mais de dois elementos:
+  - O array é dividido em **duas metades** de tamanho aproximadamente `n/2`.
+  - São feitas **duas chamadas recursivas**, cada uma processando `n/2`.
+  - Após a recursão, são feitas **duas comparações** para combinar os resultados.
 
-Portanto, a relação de recorrência do número de comparações é:
-```
-C(n) = C(n/2) + C(n/2) + 2
-```
-O que resulta em:
-```
-C(n) = 2C(n/2) + 2
-```
-Expandindo a recorrência:
-```
-C(n) = 2[2C(n/4) + 2] + 2 = 4C(n/4) + 4 + 2
-C(n) = 8C(n/8) + 8 + 4 + 2
-...
-C(n) = 2^k C(n / 2^k) + 2^k - 2
-```
-Como `n / 2^k = 1` quando `k = log_2 n`, temos:
-```
-C(n) = 2^(log_2 n) C(1) + 2^(log_2 n) - 2
-```
-Sabendo que `2^(log_2 n) = n`, então:
-```
-C(n) = n - 1 + 2n - 2 = 3n/2 - 2
-```
+A recorrência que descreve o número de operações é:
+
+\[
+T(n) = 2T(n/2) + 2
+\]
+
+### Resolvendo a Recorrência
+Usamos o **método da árvore de recorrência**:
+
+- Nível 0: \( T(n) \)
+- Nível 1: \( 2T(n/2) + 2 \)
+- Nível 2: \( 4T(n/4) + 4 \)
+- Nível \( k \): \( 2^k T(n/2^k) + 2^k \)
+
+O processo continua até que \( n/2^k = 1 \), ou seja, \( k = \log_2 n \). Substituindo na soma de operações:
+
+\[
+T(n) = 2^{\log_2 n} T(1) + 2(2^{\log_2 n} - 1)
+\]
+
+Sabemos que \( T(1) = O(1) \), então:
+
+\[
+T(n) = O(2^{\log_2 n}) = O(n) + O(n) = O(n)
+\]
+
+
 
 ### 2. Complexidade Assintótica
 A complexidade assintótica do algoritmo é **Θ(𝑛)**, pois o número de comparações cresce linearmente em relação ao tamanho da entrada.
