@@ -202,9 +202,17 @@ A complexidade assintótica do **MaxMin Select** é **O(n)**, confirmando que o 
 ## Gráfico de fluxo
 
 
+### Gráfico do fluxo de ida
+
+![Screenshot_54](https://github.com/user-attachments/assets/2b7f9b55-c15a-4d57-b832-84c505743e31)
+
+### Gráfico do fluxo de retorno
+
+![Screenshot_55](https://github.com/user-attachments/assets/6bbbdeb6-5190-435f-9a7b-9a6d4db4f6fb)
 
 
 
-![Screenshot_52](https://github.com/user-attachments/assets/2ababbf8-f989-4475-aab0-7bd8adf5fcb9)
+
+
 
 
